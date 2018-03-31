@@ -4,24 +4,28 @@
 
 #include "esphomelib/cover/cover_traits.h"
 
-namespace esphomelib {
+namespace esphomelib
+{
 
-  namespace cover {
+namespace cover
+{
 
-    CoverTraits::CoverTraits()
-        : tilt_(false) {}
+CoverTraits::CoverTraits()
+    : tilt_(false) {}
 
-    CoverTraits::CoverTraits(bool tilt)
-        : tilt_(tilt) {}
+CoverTraits::CoverTraits(bool tilt)
+    : tilt_(tilt) {}
 
-    bool CoverTraits::supports_tilt() const {
-      return this->tilt_;
-    }
-    
-    void CoverTraits::set_tilt(bool tilt) {
-      this->tilt_ = tilt;
-    }
+bool CoverTraits::supports_tilt() const
+{
+  return this->tilt_;
+}
 
-  } // namespace cover
+void CoverTraits::set_tilt(bool tilt)
+{
+  this->tilt_ = tilt;
+}
+
+} // namespace cover
 
 } // namespace esphomelib

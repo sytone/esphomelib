@@ -8,23 +8,30 @@
 namespace esphomelib
 {
 
-  namespace cover
-  {
+namespace cover
+{
 
-    class CoverTraits
-    {
-      public:
-        CoverTraits();
-        CoverTraits(bool tilt);
+/// CoverTraits - This class represents the capabilities/feature set of a cover.
+class CoverTraits
+{
+public:
+  /// Construct an empty CoverTraits object. All features will be marked unsupported.
+  CoverTraits();
 
-        bool supports_tilt() const;
-        void set_tilt(bool tilt);
+  /// Construct a CoverTraits object with the provided tilt support.
+  CoverTraits(bool tilt);
 
-      protected:
-        bool tilt_;
-    };
+  /// Return if this cover supports tilt.
+  bool supports_tilt() const;
 
-  } // namespace cover
+  /// Set whether this fan supports oscillation.
+  void set_tilt(bool tilt);
+
+protected:
+  bool tilt_;
+};
+
+} // namespace cover
 
 } // namespace esphomelib
 

@@ -10,15 +10,17 @@
 #include "esphomelib/helpers.h"
 #include "esphomelib/cover/cover_traits.h"
 
-namespace esphomelib {
+namespace esphomelib
+{
 
-namespace cover {
+namespace cover
+{
 
 using cover_send_callback_t = std::function<void()>;
 
-class CoverState {
- public:
-
+class CoverState
+{
+public:
   void add_send_callback(const cover_send_callback_t &send_callback);
   void add_update_callback(const cover_send_callback_t &update_callback);
 
@@ -43,14 +45,14 @@ class CoverState {
   void load_from_preferences(const std::string &friendly_name);
   void save_to_preferences(const std::string &friendly_name);
 
- protected:
+protected:
   std::string state_{""};
   uint32_t tilt_min_;
   uint32_t tilt_max_;
   uint32_t tilt_opened_value_;
   uint32_t tilt_closed_value_;
   uint32_t tilt_;
-  
+
   CoverTraits traits_{};
   CallbackManager<void()> send_callback_{};
   CallbackManager<void()> update_callback_{};
